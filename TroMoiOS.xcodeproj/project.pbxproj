@@ -16,6 +16,8 @@
 		10B06183283D4EFE003E3F83 /* TroMoiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B06182283D4EFE003E3F83 /* TroMoiOSTests.swift */; };
 		10B0618D283D4EFE003E3F83 /* TroMoiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0618C283D4EFE003E3F83 /* TroMoiOSUITests.swift */; };
 		10B0618F283D4EFE003E3F83 /* TroMoiOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0618E283D4EFE003E3F83 /* TroMoiOSUITestsLaunchTests.swift */; };
+		10B061A3283D63A1003E3F83 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B061A2283D63A1003E3F83 /* RegisterController.swift */; };
+		10B061A5283D63BC003E3F83 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B061A4283D63BC003E3F83 /* ProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		10B06188283D4EFE003E3F83 /* TroMoiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TroMoiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B0618C283D4EFE003E3F83 /* TroMoiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TroMoiOSUITests.swift; sourceTree = "<group>"; };
 		10B0618E283D4EFE003E3F83 /* TroMoiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TroMoiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		10B061A2283D63A1003E3F83 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		10B061A4283D63BC003E3F83 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +103,12 @@
 		10B0616A283D4EF4003E3F83 /* TroMoiOS */ = {
 			isa = PBXGroup;
 			children = (
-				10B0616B283D4EF4003E3F83 /* AppDelegate.swift */,
-				10B0616D283D4EF4003E3F83 /* SceneDelegate.swift */,
+				10B061A6283D63CD003E3F83 /* SoftwareSupport */,
 				10B0616F283D4EF4003E3F83 /* ViewController.swift */,
 				10B06171283D4EF4003E3F83 /* Main.storyboard */,
-				10B06174283D4EFD003E3F83 /* Assets.xcassets */,
-				10B06176283D4EFD003E3F83 /* LaunchScreen.storyboard */,
 				10B06179283D4EFD003E3F83 /* Info.plist */,
+				10B061A2283D63A1003E3F83 /* RegisterController.swift */,
+				10B061A4283D63BC003E3F83 /* ProfileController.swift */,
 			);
 			path = TroMoiOS;
 			sourceTree = "<group>";
@@ -125,6 +128,17 @@
 				10B0618E283D4EFE003E3F83 /* TroMoiOSUITestsLaunchTests.swift */,
 			);
 			path = TroMoiOSUITests;
+			sourceTree = "<group>";
+		};
+		10B061A6283D63CD003E3F83 /* SoftwareSupport */ = {
+			isa = PBXGroup;
+			children = (
+				10B0616B283D4EF4003E3F83 /* AppDelegate.swift */,
+				10B0616D283D4EF4003E3F83 /* SceneDelegate.swift */,
+				10B06174283D4EFD003E3F83 /* Assets.xcassets */,
+				10B06176283D4EFD003E3F83 /* LaunchScreen.storyboard */,
+			);
+			name = SoftwareSupport;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B061A5283D63BC003E3F83 /* ProfileController.swift in Sources */,
+				10B061A3283D63A1003E3F83 /* RegisterController.swift in Sources */,
 				10B06170283D4EF4003E3F83 /* ViewController.swift in Sources */,
 				10B0616C283D4EF4003E3F83 /* AppDelegate.swift in Sources */,
 				10B0616E283D4EF4003E3F83 /* SceneDelegate.swift in Sources */,
