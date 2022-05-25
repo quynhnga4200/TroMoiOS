@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tYX-iT-5vc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BHS-LZ-sCi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -212,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnF-8N-Sis" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1681" y="84"/>
+            <point key="canvasLocation" x="35" y="78"/>
         </scene>
         <!--Description Controller-->
         <scene sceneID="NsV-Oa-Wms">
@@ -226,7 +226,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cAU-PE-ydR">
-                                        <rect key="frame" x="0.0" y="0.0" width="415" height="1300"/>
+                                        <rect key="frame" x="1" y="0.0" width="415" height="1300"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHn-1r-GVp">
                                                 <rect key="frame" x="0.0" y="0.0" width="415" height="1300"/>
@@ -598,12 +598,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63k-11-pDU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2657.971014492754" y="97.767857142857139"/>
+            <point key="canvasLocation" x="2452" y="97"/>
         </scene>
         <!--Create Post Controller-->
         <scene sceneID="JCA-0Y-gWA">
             <objects>
-                <viewController id="tYX-iT-5vc" customClass="CreatePostController" customModule="Room" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tYX-iT-5vc" customClass="CreatePostController" customModule="TroMoiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cQZ-Yr-7tU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1067,10 +1067,10 @@
             </objects>
             <point key="canvasLocation" x="1660.8695652173915" y="97.767857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Controller-->
         <scene sceneID="oGN-L5-g8e">
             <objects>
-                <viewController id="59U-gt-in8" sceneMemberID="viewController">
+                <viewController id="59U-gt-in8" customClass="HomeController" customModule="TroMoiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VcH-yP-mjr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1135,15 +1135,16 @@
                             <constraint firstItem="YCU-4l-Q6c" firstAttribute="top" secondItem="FEZ-pK-Jtb" secondAttribute="top" constant="35" id="OLA-WZ-I2U"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="WFE-AY-gv8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vba-Br-YMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1872.4637681159422" y="76.339285714285708"/>
+            <point key="canvasLocation" x="-1586" y="-50"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Controller-->
         <scene sceneID="iAA-ER-tGX">
             <objects>
-                <viewController id="BHS-LZ-sCi" sceneMemberID="viewController">
+                <viewController id="BHS-LZ-sCi" customClass="LoginController" customModule="TroMoiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B3Q-gV-u81">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1184,10 +1185,6 @@
                                 <color key="textColor" systemColor="systemBlueColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="V28-eC-7lq">
-                                <rect key="frame" x="1" y="399" width="1000" height="562"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Rw-Nz-zDf"/>
                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
@@ -1210,7 +1207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4v1-xS-WMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-849.27536231884062" y="78.348214285714278"/>
+            <point key="canvasLocation" x="-628" y="-235"/>
         </scene>
     </scenes>
     <resources>
