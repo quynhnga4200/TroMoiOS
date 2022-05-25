@@ -26,7 +26,7 @@
         <!--Register Controller-->
         <scene sceneID="TWT-Pb-2kX">
             <objects>
-                <viewController id="29m-hf-YI1" customClass="RegisterController" customModule="Room" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="29m-hf-YI1" customClass="RegisterController" customModule="TroMoiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h9H-Jw-eGk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +125,7 @@
         <!--Profile Controller-->
         <scene sceneID="Hki-TC-CFb">
             <objects>
-                <viewController id="oIb-UA-1wj" customClass="ProfileController" customModule="Room" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oIb-UA-1wj" customClass="ProfileController" customModule="TroMoiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QX3-br-oeV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,7 +231,7 @@
         <!--Description Controller-->
         <scene sceneID="NsV-Oa-Wms">
             <objects>
-                <viewController id="G0A-vm-cp3" customClass="DescriptionController" customModule="Room" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="G0A-vm-cp3" customClass="DescriptionController" customModule="TroMoiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8zt-fu-9YG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
