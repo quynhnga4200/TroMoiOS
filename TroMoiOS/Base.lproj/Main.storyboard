@@ -967,6 +967,9 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Xac nhan"/>
+                                                        <connections>
+                                                            <action selector="Confirmbutton:" destination="tYX-iT-5vc" eventType="touchUpInside" id="eVm-oO-e7m"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mo ta chi tiet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0M-pT-Tjh">
                                                         <rect key="frame" x="10" y="1001" width="84.5" height="17"/>
