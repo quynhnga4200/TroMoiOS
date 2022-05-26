@@ -10,6 +10,7 @@
 		1090FA72283E8EA100FEE224 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1090FA71283E8EA000FEE224 /* HomeController.swift */; };
 		1090FA74283E8F1F00FEE224 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1090FA73283E8F1F00FEE224 /* LoginController.swift */; };
 		1090FA76283E8F7200FEE224 /* CreatePostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1090FA75283E8F7200FEE224 /* CreatePostController.swift */; };
+		1090FA78283F385800FEE224 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1090FA77283F385800FEE224 /* Room.swift */; };
 		10B0616C283D4EF4003E3F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0616B283D4EF4003E3F83 /* AppDelegate.swift */; };
 		10B0616E283D4EF4003E3F83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0616D283D4EF4003E3F83 /* SceneDelegate.swift */; };
 		10B06170283D4EF4003E3F83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0616F283D4EF4003E3F83 /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		1090FA71283E8EA000FEE224 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		1090FA73283E8F1F00FEE224 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		1090FA75283E8F7200FEE224 /* CreatePostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostController.swift; sourceTree = "<group>"; };
+		1090FA77283F385800FEE224 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		10B06168283D4EF4003E3F83 /* TroMoiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TroMoiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B0616B283D4EF4003E3F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10B0616D283D4EF4003E3F83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				1090FA71283E8EA000FEE224 /* HomeController.swift */,
 				1090FA73283E8F1F00FEE224 /* LoginController.swift */,
 				1090FA75283E8F7200FEE224 /* CreatePostController.swift */,
+				1090FA77283F385800FEE224 /* Room.swift */,
 			);
 			path = TroMoiOS;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				10B061A3283D63A1003E3F83 /* RegisterController.swift in Sources */,
 				1090FA72283E8EA100FEE224 /* HomeController.swift in Sources */,
 				10B061A8283DF18D003E3F83 /* DescriptionController.swift in Sources */,
+				1090FA78283F385800FEE224 /* Room.swift in Sources */,
 				10B06170283D4EF4003E3F83 /* ViewController.swift in Sources */,
 				1090FA76283E8F7200FEE224 /* CreatePostController.swift in Sources */,
 				1090FA74283E8F1F00FEE224 /* LoginController.swift in Sources */,
