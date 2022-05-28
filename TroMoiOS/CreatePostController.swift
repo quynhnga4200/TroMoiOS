@@ -80,7 +80,7 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
         DescriptionTextfield.layer.borderWidth = 1.0
 
         ref = Database.database().reference()
-        self.ref.child("users").setValue(["username": "abc"])
+        self.ref.child("users").setValue(["username": "thanh~tran"])
 
         // Do any additional setup after loading the view.
     }
