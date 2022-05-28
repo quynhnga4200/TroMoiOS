@@ -7,8 +7,12 @@
 
 import UIKit
 import PhotosUI
+import FirebaseDatabase
+import FirebaseDatabaseSwift
 
 class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate, PHPickerViewControllerDelegate {
+    var ref: DatabaseReference!
+
     var PostType: Int = 0
     var RoomType: Int = 0
     var ImageArray: [UIImage] = []
@@ -69,14 +73,15 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
         
     }
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let borderdes = UIColor.black
         DescriptionTextfield.layer.borderColor = borderdes.cgColor
         DescriptionTextfield.layer.borderWidth = 1.0
+
+        ref = Database.database().reference()
+        self.ref.child("users").setValue(["username": "abc"])
+
         // Do any additional setup after loading the view.
     }
     
@@ -172,10 +177,14 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
     @IBAction func Confirmbutton(_ sender: UIButton) {
         let bordercolor = UIColor.red
         var check: Bool = false
+
         if PriceTextfield.text == ""{
             check = true
             PriceTextfield.layer.borderColor = bordercolor.cgColor
             PriceTextfield.layer.borderWidth = 1.0
+        }
+        else{
+            PriceTextfield.layer.borderColor = nil
         }
         if AcreageTextfield.text == ""{
             check = true
@@ -207,7 +216,6 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
             AdressCity.layer.borderColor = bordercolor.cgColor
             AdressCity.layer.borderWidth = 1.0
         }
-        
         if AdressDictrict.text == ""{
             check = true
             AdressDictrict.layer.borderColor = bordercolor.cgColor
