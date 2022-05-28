@@ -10,11 +10,16 @@ import UIKit
 
 class RegisterController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        // Do any additional setup after loading the view.
+//    }
+//
+//    func Register(name:String ,email: String ,phone:String,pass:String,repass:String) -> User{
+//
+//
+//
+//        return  User.init(name: <#T##String#>, email: <#T##String#>, phone: <#T##String#>, pass: <#T##String#>, repass: <#T##String#>, avatar: <#T##String#>)
+//    }
 }
 
