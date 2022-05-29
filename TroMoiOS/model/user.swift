@@ -7,13 +7,15 @@
 
 import Foundation
 import UIKit
-class  User {
-    var name: String = ""
-    var emai: String = ""
-    var phonenumber : String = ""
-    var password : String = ""
-    var repassword : String = ""
-    var Avatar : String = ""
+
+struct  User {
+    let name: String
+    let emai: String
+    let phonenumber : String
+    let password : String
+    let repassword : String
+    let Avatar : String
+    
     init(name:String ,email: String ,phone:String,pass:String,repass:String,avatar:String){
        self.name = name
        self.emai = email
@@ -22,7 +24,10 @@ class  User {
         self.repassword = repass
         self.Avatar = avatar
     }
+
+        
+    }
     
-}
+
    
 
