@@ -45,7 +45,7 @@ class HomeController: UIViewController , UITableViewDelegate , UITableViewDataSo
         
         cell.motelIMG.image = UIImage (named: motel)
         cell.addressLB.text = motel
-        cell.areaLB.text = "TD: \(area) m2"
+        cell.areaLB.text = "DT: \(area) m2"
         cell.priceLB.text = "\(price) triệu"
       return cell
         
