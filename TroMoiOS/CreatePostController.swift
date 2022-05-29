@@ -25,10 +25,8 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
     @IBOutlet weak var DescriptionTextfield: UITextView!
     @IBOutlet weak var BtnConfirm: UIButton!
     @IBOutlet weak var WifiStackView: UIStackView!
-    
     @IBOutlet weak var WcStackView: UIStackView!
     @IBOutlet weak var PackingStackView: UIStackView!
-    
     @IBOutlet weak var FreeStackView: UIStackView!
     @IBOutlet weak var KitchenStackView: UIStackView!
     @IBOutlet weak var AirStackView: UIStackView!
@@ -42,8 +40,7 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
     @IBOutlet weak var wifitextfield: UILabel!
     var imagearay: [PHPickerResult] = []
     var uilityaray: [Bool] = [false,false,false,false,false,false,false,false]
-    
-    
+    //MARK: Hàm bắt sự kiện các icon tiện ích
     @IBAction func stackclick(_ sender: UITapGestureRecognizer) {
         stackviewClicked(viewstack: WifiStackView,position: 0)
     }
@@ -58,12 +55,25 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
     
     @IBAction func FreeClick(_ sender: UITapGestureRecognizer) {
         stackviewClicked(viewstack: FreeStackView,position: 3)
+        
     }
     
-    
+    @IBAction func KitchenClick(_ sender: UITapGestureRecognizer) {
+        stackviewClicked(viewstack: KitchenStackView,position: 4)
+    }
+    @IBAction func AirClick(_ sender: UITapGestureRecognizer) {
+        stackviewClicked(viewstack: AirStackView,position: 5)
+    }
+    @IBAction func FridgeClick(_ sender: UITapGestureRecognizer) {
+        stackviewClicked(viewstack: FridgeStackView,position: 6)
+    }
+    @IBAction func WasingClick(_ sender: UITapGestureRecognizer) {
+        stackviewClicked(viewstack: WasingStackView,position: 7)
+    }
+    //MARK: Hàm bắt các sự kiện icon
     func stackviewClicked (viewstack: UIStackView, position: Int){
         if uilityaray[position] == false{
-            viewstack.layer.backgroundColor = UIColor.red.cgColor
+            viewstack.layer.backgroundColor = #colorLiteral(red: 0.7206110954, green: 0.9696516991, blue: 0.9959703684, alpha: 1);#colorLiteral(red: 0.7206110954, green: 0.9696516991, blue: 0.9959703684, alpha: 1)
             uilityaray[position] = true
         }
         else{
@@ -122,7 +132,6 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
     
     //MARK: Bắt sự kiện bấm vào chọn ảnh
     @IBAction func imageProcessing(_ sender: UITapGestureRecognizer) {
-        
         //print("Đã có thể nhấn vào nút ")
         var configuration = PHPickerConfiguration()
         configuration.selectionLimit = 4
@@ -131,20 +140,12 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
         //picker(imagePickerController, didFinishPicking: imagearay)
         imagePickerController.delegate = self
         self.present(imagePickerController, animated: true, completion: nil)
-        
-        
     }
+    
     //MARK: Image picker delegation function
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        if let selectedImage = info[.originalImage] as? UIImage{
-//            //imgMeal.image = selectedImage //đưa ảnh đã chọn vào view//Câu này bị lỗi
-//            dismiss(animated: true, completion: nil)
-//        }
-//    }
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         dismiss(animated: true)
         StackViewImage.subviews.forEach{(view) in view.removeFromSuperview()}
-        //StackViewImage.removeArrangedSubview(StackViewImage.arrangedSubviews[0])
         let itemProviders = results.map(\.itemProvider)
         for item in itemProviders {
             if item.canLoadObject(ofClass: UIImage.self) {
@@ -159,8 +160,6 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
                             StackViewImage.addArrangedSubview(imageView)
                             ImageArray.append(image)
                             print(ImageArray.count)
-                            //self.imageView.image = nil
-                            //self.imageView.image = image
                         }
                     }
                 }
@@ -170,7 +169,6 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
     }
     
     @IBAction func InputPriceTextfield(_ sender: UITextField){
-        
         PriceTextfield.layer.borderColor = UIColor.blue.cgColor;
         PriceTextfield.layer.borderWidth = 1.0
     }
@@ -190,6 +188,9 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
             check = true
             AcreageTextfield.layer.borderColor = bordercolor.cgColor
             AcreageTextfield.layer.borderWidth = 1.0
+        }
+        else{
+            AcreageTextfield.layer.borderColor = UIColor.blue.cgColor
         }
         if TitleTextfield.text == ""{
             check = true
