@@ -10,6 +10,7 @@
 		1090FA72283E8EA100FEE224 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1090FA71283E8EA000FEE224 /* HomeController.swift */; };
 		1090FA74283E8F1F00FEE224 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1090FA73283E8F1F00FEE224 /* LoginController.swift */; };
 		1090FA76283E8F7200FEE224 /* CreatePostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1090FA75283E8F7200FEE224 /* CreatePostController.swift */; };
+		1090FA78283F385800FEE224 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1090FA77283F385800FEE224 /* Room.swift */; };
 		10B0616C283D4EF4003E3F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0616B283D4EF4003E3F83 /* AppDelegate.swift */; };
 		10B0616E283D4EF4003E3F83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0616D283D4EF4003E3F83 /* SceneDelegate.swift */; };
 		10B06170283D4EF4003E3F83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0616F283D4EF4003E3F83 /* ViewController.swift */; };
@@ -22,8 +23,13 @@
 		10B061A3283D63A1003E3F83 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B061A2283D63A1003E3F83 /* RegisterController.swift */; };
 		10B061A5283D63BC003E3F83 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B061A4283D63BC003E3F83 /* ProfileController.swift */; };
 		10B061A8283DF18D003E3F83 /* DescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B061A7283DF18D003E3F83 /* DescriptionController.swift */; };
+
 		54D0F63028425087000EE9B2 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D0F62E28425087000EE9B2 /* HomeTableViewCell.swift */; };
 		54D0F63128425087000EE9B2 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D0F62F28425087000EE9B2 /* HomeTableViewCell.xib */; };
+
+		10DBBC5D28421FDB004D4F55 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DBBC5C28421FDA004D4F55 /* user.swift */; };
+		10DBBC6028422CF8004D4F55 /* category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DBBC5F28422CF8004D4F55 /* category.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,7 @@
 		1090FA71283E8EA000FEE224 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		1090FA73283E8F1F00FEE224 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		1090FA75283E8F7200FEE224 /* CreatePostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostController.swift; sourceTree = "<group>"; };
+		1090FA77283F385800FEE224 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		10B06168283D4EF4003E3F83 /* TroMoiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TroMoiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B0616B283D4EF4003E3F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10B0616D283D4EF4003E3F83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,8 +70,13 @@
 		10B061A2283D63A1003E3F83 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		10B061A4283D63BC003E3F83 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		10B061A7283DF18D003E3F83 /* DescriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionController.swift; sourceTree = "<group>"; };
+
 		54D0F62E28425087000EE9B2 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		54D0F62F28425087000EE9B2 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+
+		10DBBC5C28421FDA004D4F55 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		10DBBC5F28422CF8004D4F55 /* category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = category.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +127,9 @@
 		10B0616A283D4EF4003E3F83 /* TroMoiOS */ = {
 			isa = PBXGroup;
 			children = (
+				10DBBC5E28422632004D4F55 /* controller */,
+				10DBBC5B28421FA1004D4F55 /* model */,
 				10B061A6283D63CD003E3F83 /* SoftwareSupport */,
-				10B0616F283D4EF4003E3F83 /* ViewController.swift */,
 				10B06171283D4EF4003E3F83 /* Main.storyboard */,
 				10B06179283D4EFD003E3F83 /* Info.plist */,
 				10B061A2283D63A1003E3F83 /* RegisterController.swift */,
@@ -159,6 +172,30 @@
 			name = SoftwareSupport;
 			sourceTree = "<group>";
 		};
+		10DBBC5B28421FA1004D4F55 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				1090FA77283F385800FEE224 /* Room.swift */,
+				10DBBC5C28421FDA004D4F55 /* user.swift */,
+				10DBBC5F28422CF8004D4F55 /* category.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		10DBBC5E28422632004D4F55 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				1090FA73283E8F1F00FEE224 /* LoginController.swift */,
+				10B0616F283D4EF4003E3F83 /* ViewController.swift */,
+				1090FA75283E8F7200FEE224 /* CreatePostController.swift */,
+				1090FA71283E8EA000FEE224 /* HomeController.swift */,
+				10B061A7283DF18D003E3F83 /* DescriptionController.swift */,
+				10B061A4283D63BC003E3F83 /* ProfileController.swift */,
+				10B061A2283D63A1003E3F83 /* RegisterController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,6 +212,8 @@
 			dependencies = (
 			);
 			name = TroMoiOS;
+			packageProductDependencies = (
+			);
 			productName = TroMoiOS;
 			productReference = 10B06168283D4EF4003E3F83 /* TroMoiOS.app */;
 			productType = "com.apple.product-type.application";
@@ -247,6 +286,8 @@
 				Base,
 			);
 			mainGroup = 10B0615F283D4EF4003E3F83;
+			packageReferences = (
+			);
 			productRefGroup = 10B06169283D4EF4003E3F83 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -295,11 +336,17 @@
 				10B061A3283D63A1003E3F83 /* RegisterController.swift in Sources */,
 				1090FA72283E8EA100FEE224 /* HomeController.swift in Sources */,
 				10B061A8283DF18D003E3F83 /* DescriptionController.swift in Sources */,
+				1090FA78283F385800FEE224 /* Room.swift in Sources */,
 				10B06170283D4EF4003E3F83 /* ViewController.swift in Sources */,
 				1090FA76283E8F7200FEE224 /* CreatePostController.swift in Sources */,
+
 				54D0F63028425087000EE9B2 /* HomeTableViewCell.swift in Sources */,
+
+				10DBBC6028422CF8004D4F55 /* category.swift in Sources */,
+
 				1090FA74283E8F1F00FEE224 /* LoginController.swift in Sources */,
 				10B0616C283D4EF4003E3F83 /* AppDelegate.swift in Sources */,
+				10DBBC5D28421FDB004D4F55 /* user.swift in Sources */,
 				10B0616E283D4EF4003E3F83 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
