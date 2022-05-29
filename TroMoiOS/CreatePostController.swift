@@ -7,11 +7,9 @@
 
 import UIKit
 import PhotosUI
-import FirebaseDatabase
-import FirebaseDatabaseSwift
+
 
 class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate, PHPickerViewControllerDelegate {
-    var ref: DatabaseReference!
 
     var PostType: Int = 0
     var RoomType: Int = 0
@@ -89,9 +87,8 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
         DescriptionTextfield.layer.borderColor = borderdes.cgColor
         DescriptionTextfield.layer.borderWidth = 1.0
 
-        ref = Database.database().reference()
-        self.ref.child("users").setValue(["username": "thanh~tran"])
-
+        
+    
         // Do any additional setup after loading the view.
     }
     
