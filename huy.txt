@@ -1,0 +1,69 @@
+//
+//  LoginController.swift
+//  TroMoiOS
+//
+//  Created by PHAM QUYNH NGA on 25/05/2022.
+//
+
+import Foundation
+import UIKit
+
+class LoginController: UIViewController {
+
+    @IBOutlet weak var phoneError: UILabel!
+    @IBOutlet weak var passError: UILabel!
+    @IBOutlet weak var phoneTF: UITextField!
+    @IBOutlet weak var passTF: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+     
+    
+    func resetForm(){
+        loginButton.isEnabled = false
+        phoneError.isHidden = false
+        passError.isHidden = false
+        
+        passError.text = "Required"
+        phoneTF.text = "Required"
+        passTF.text = "Required"
+    }
+    
+    @IBAction  func phoneChange(_ sender: Any){
+        if let phoneNumber = phoneTF.text
+        {
+            if let messageError = invalidPhoneNumber(phoneNumber){
+                phoneError.text = messageError
+                phoneError.isHidden = false
+           }
+            else{
+                phoneError.isHidden = true
+            }
+        }
+    }
+        func invalidPhoneNumber(_ value:String) -> String?{
+            
+            let set = CharacterSet(charactersIn: value)
+            if !CharacterSet.decimalDigits.isSuperset(of: set){
+             return "Chỉ được nhập số"
+            }
+                
+                if value.count != 10{
+                return " Phải nhập đủ 10 số "
+            }
+           return nil
+        }
+        
+    @IBAction func passwordChage(_ sender: Any)
+        {
+            
+        }
+        
+    @IBAction  func loginAcion(_ sender: Any)
+        {
+            resetForm()
+        }
+    
+}
