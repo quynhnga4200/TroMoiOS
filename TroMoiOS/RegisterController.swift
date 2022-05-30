@@ -17,13 +17,15 @@ class RegisterController: UIViewController {
     @IBOutlet weak var repassTF: UITextField!
     
     
+    @IBOutlet weak var registerError: UILabel!
     @IBOutlet weak var fullNameError: UILabel!
     @IBOutlet weak var emailError: UILabel!
     @IBOutlet weak var phoneError: UILabel!
     @IBOutlet weak var passError: UILabel!
     @IBOutlet weak var repassError: UILabel!
     @IBOutlet weak var registerButton: UIButton!
- 
+   public var ListUser : Array<User> = Array()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,17 +38,27 @@ class RegisterController: UIViewController {
         phoneError.isHidden = false
         passError.isHidden = false
         
-       
-        passError.text = "  "
+        emailTF.text = ""
+        passError.text = ""
         phoneTF.text = " "
         passTF.text = " "
-        fullNameTF.text = " "
-        repassTF.text = " "
+        fullNameTF.text = ""
+        repassTF.text = ""
     }
    
     @IBAction func registerAction(_ sender: Any) {
-        resetForm()
-    
+     
+//        if User.user?.phonenumber == phoneTF.text{
+//            registerError.text = "Register Faild"
+//
+//        }
+//        else{
+         
+            ListUser.append(User.init(name: fullNameTF.text!, email: emailTF.text!, phone: phoneTF.text!, pass: passTF.text!, repass: repassTF.text!, avatar: ""))
+                    self.goToLogin()
+                print(ListUser)
+        
+//        }
     }
     @IBAction func nameChanged(_ sender: Any) {
         if(fullNameTF.text == ""){
@@ -178,5 +190,11 @@ class RegisterController: UIViewController {
             registerButton.isEnabled = true
         }
     }
+    private  func goToLogin(){
+        let controller = storyboard!.instantiateViewController(withIdentifier: "login") as! LoginController
+        present(controller, animated: true,completion: nil)
+    }
+    
+
 }
 
