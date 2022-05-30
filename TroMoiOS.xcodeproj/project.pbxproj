@@ -23,13 +23,11 @@
 		10B061A3283D63A1003E3F83 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B061A2283D63A1003E3F83 /* RegisterController.swift */; };
 		10B061A5283D63BC003E3F83 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B061A4283D63BC003E3F83 /* ProfileController.swift */; };
 		10B061A8283DF18D003E3F83 /* DescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B061A7283DF18D003E3F83 /* DescriptionController.swift */; };
-
-		54D0F63028425087000EE9B2 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D0F62E28425087000EE9B2 /* HomeTableViewCell.swift */; };
-		54D0F63128425087000EE9B2 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D0F62F28425087000EE9B2 /* HomeTableViewCell.xib */; };
-
 		10DBBC5D28421FDB004D4F55 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DBBC5C28421FDA004D4F55 /* user.swift */; };
 		10DBBC6028422CF8004D4F55 /* category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DBBC5F28422CF8004D4F55 /* category.swift */; };
-
+		54D0F63028425087000EE9B2 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D0F62E28425087000EE9B2 /* HomeTableViewCell.swift */; };
+		54D0F63128425087000EE9B2 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D0F62F28425087000EE9B2 /* HomeTableViewCell.xib */; };
+		54E8282B28438107005B0C0F /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8282A28438106005B0C0F /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,13 +68,11 @@
 		10B061A2283D63A1003E3F83 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		10B061A4283D63BC003E3F83 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		10B061A7283DF18D003E3F83 /* DescriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionController.swift; sourceTree = "<group>"; };
-
-		54D0F62E28425087000EE9B2 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		54D0F62F28425087000EE9B2 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
-
 		10DBBC5C28421FDA004D4F55 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		10DBBC5F28422CF8004D4F55 /* category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = category.swift; sourceTree = "<group>"; };
-
+		54D0F62E28425087000EE9B2 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		54D0F62F28425087000EE9B2 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		54E8282A28438106005B0C0F /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +136,7 @@
 				1090FA75283E8F7200FEE224 /* CreatePostController.swift */,
 				54D0F62E28425087000EE9B2 /* HomeTableViewCell.swift */,
 				54D0F62F28425087000EE9B2 /* HomeTableViewCell.xib */,
+				54E8282A28438106005B0C0F /* CustomTabBar.swift */,
 			);
 			path = TroMoiOS;
 			sourceTree = "<group>";
@@ -185,13 +182,7 @@
 		10DBBC5E28422632004D4F55 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				1090FA73283E8F1F00FEE224 /* LoginController.swift */,
 				10B0616F283D4EF4003E3F83 /* ViewController.swift */,
-				1090FA75283E8F7200FEE224 /* CreatePostController.swift */,
-				1090FA71283E8EA000FEE224 /* HomeController.swift */,
-				10B061A7283DF18D003E3F83 /* DescriptionController.swift */,
-				10B061A4283D63BC003E3F83 /* ProfileController.swift */,
-				10B061A2283D63A1003E3F83 /* RegisterController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -334,16 +325,14 @@
 			files = (
 				10B061A5283D63BC003E3F83 /* ProfileController.swift in Sources */,
 				10B061A3283D63A1003E3F83 /* RegisterController.swift in Sources */,
+				54E8282B28438107005B0C0F /* CustomTabBar.swift in Sources */,
 				1090FA72283E8EA100FEE224 /* HomeController.swift in Sources */,
 				10B061A8283DF18D003E3F83 /* DescriptionController.swift in Sources */,
 				1090FA78283F385800FEE224 /* Room.swift in Sources */,
 				10B06170283D4EF4003E3F83 /* ViewController.swift in Sources */,
 				1090FA76283E8F7200FEE224 /* CreatePostController.swift in Sources */,
-
 				54D0F63028425087000EE9B2 /* HomeTableViewCell.swift in Sources */,
-
 				10DBBC6028422CF8004D4F55 /* category.swift in Sources */,
-
 				1090FA74283E8F1F00FEE224 /* LoginController.swift in Sources */,
 				10B0616C283D4EF4003E3F83 /* AppDelegate.swift in Sources */,
 				10DBBC5D28421FDB004D4F55 /* user.swift in Sources */,
