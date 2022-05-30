@@ -13,12 +13,15 @@ class DescriptionController: UIViewController {
     
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var address: UITextField!
+    
     @IBOutlet weak var titleroom: UITextField!
     @IBOutlet weak var tienich: UIStackView!
     @IBOutlet weak var timePost: UITextField!
     @IBOutlet weak var area: UITextField!
     
-    @IBOutlet weak var chitiet: UITextField!
+    
+    @IBOutlet weak var chitietRoom: UILabel!
+    
     @IBOutlet weak var phone: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +46,8 @@ class DescriptionController: UIViewController {
                     address.text = json["DiaChi"] as! String
                     titleroom.text = json["Tieude"] as! String
                     area.text = json["dientich"] as! String
+                    chitietRoom.text = json["Chitiet"] as! String
+                    phone.text = json["Sodt"] as! String
                 } catch {
                     print("error")
                 }
