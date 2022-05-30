@@ -222,6 +222,7 @@
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="SWD-nt-Zxy">
                                         <rect key="frame" x="122" y="45.5" width="150" height="150"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SWD-nt-Zxy" secondAttribute="height" multiplier="1:1" id="Fvf-vW-Dhq"/>
                                         </constraints>
