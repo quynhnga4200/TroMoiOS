@@ -28,6 +28,7 @@
 		54D0F63028425087000EE9B2 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D0F62E28425087000EE9B2 /* HomeTableViewCell.swift */; };
 		54D0F63128425087000EE9B2 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D0F62F28425087000EE9B2 /* HomeTableViewCell.xib */; };
 		E70DE6E42843893400F0B87E /* NetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DE6E32843893400F0B87E /* NetWorkService.swift */; };
+		54E8282B28438107005B0C0F /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8282A28438106005B0C0F /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		54D0F62E28425087000EE9B2 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		54D0F62F28425087000EE9B2 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		E70DE6E32843893400F0B87E /* NetWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkService.swift; sourceTree = "<group>"; };
+		54E8282A28438106005B0C0F /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				1090FA75283E8F7200FEE224 /* CreatePostController.swift */,
 				54D0F62E28425087000EE9B2 /* HomeTableViewCell.swift */,
 				54D0F62F28425087000EE9B2 /* HomeTableViewCell.xib */,
+				54E8282A28438106005B0C0F /* CustomTabBar.swift */,
 			);
 			path = TroMoiOS;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				10B061A5283D63BC003E3F83 /* ProfileController.swift in Sources */,
 				10B061A3283D63A1003E3F83 /* RegisterController.swift in Sources */,
 				E70DE6E42843893400F0B87E /* NetWorkService.swift in Sources */,
+				54E8282B28438107005B0C0F /* CustomTabBar.swift in Sources */,
 				1090FA72283E8EA100FEE224 /* HomeController.swift in Sources */,
 				10B061A8283DF18D003E3F83 /* DescriptionController.swift in Sources */,
 				1090FA78283F385800FEE224 /* Room.swift in Sources */,
