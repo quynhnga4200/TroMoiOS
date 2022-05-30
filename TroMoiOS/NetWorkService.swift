@@ -12,14 +12,14 @@ class   NetWorkServỉce{
     private init(){}
     
     private var user : User?
-   
+    
     func login(phone:String,pass:String,
                completion: @escaping (Bool) -> Void){
         
         DispatchQueue.global().async {
             sleep(2)
-            DispatchQueue.main.async { [self] in
-                if phone == self.user?.phonenumber && pass == self.user?.password{
+            DispatchQueue.main.async {
+                if phone == "0376610701" && pass == "admin"{
                     completion(true)
                     self.user = User(name: "thanh", email: "20211TT1281@gmail.com", phone: "0376610701", pass: "admin", repass: "admin", avatar: "")
                     

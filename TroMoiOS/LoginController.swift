@@ -8,14 +8,14 @@
 import Foundation
 import UIKit
 
-class LoginController: UIViewController ,UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class LoginController: UIViewController {
     @IBOutlet weak var phoneError: UILabel!
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var passTF: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passError: UILabel!
     var check: Bool = false
-    var userList = [User]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        phoneTF.addTarget(self, action: #selector(self.valicationField), for: .editingChanged)
@@ -41,21 +41,4 @@ class LoginController: UIViewController ,UITextFieldDelegate, UIImagePickerContr
         let controller = storyboard!.instantiateViewController(withIdentifier: "home") as! HomeController
         present(controller, animated: true,completion: nil)
     }
-    @IBAction func unWindFromMealDetailController(segue: UIStoryboardSegue){
-        //print("Back from meal detail controller")
-        //ket noi man hinh nguoi voi ham unwind
-    
-        //get source controller tu man hinh 2
-        if let sourceController = segue.source as? RegisterController {
-        //get the new meal from meal detail controller
-            if let users = sourceController.user { //mealName
-                //print(meal.name)
-                //add the new meal into data source
-                    userList += [users]
-           
-                
-                    }
-                }
-    }
-    
 }
