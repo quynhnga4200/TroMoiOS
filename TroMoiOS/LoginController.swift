@@ -8,52 +8,54 @@
 import Foundation
 import UIKit
 
-class LoginController: UIViewController {
-
+class LoginController: UIViewController ,UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @IBOutlet weak var phoneError: UILabel!
-   
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var passTF: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passError: UILabel!
-    
-   
-    
+    var check: Bool = false
+    var userList = [User]()
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-     
-    
-    func resetForm(){
-        loginButton.isEnabled = false
-        phoneError.isHidden = false
-        passError.isHidden = false
+//        phoneTF.addTarget(self, action: #selector(self.valicationField), for: .editingChanged)
+//        phoneTF.addTarget(self, action: #selector(self.valicationField), for: .editingChanged)
         
-       
-        passError.text = ""
-        phoneTF.text = ""
-        passTF.text = ""
     }
-    
-    @IBAction func phoneChanged(_ sender: Any) {
-       
+    @objc private func valicationField(){
+        loginButton.isEnabled =  phoneTF.text != "" && passTF.text != ""
     }
-
-        func invalidPhoneNumber(_ value:String) -> String?{
-
-           return nil
+    @IBAction func loginAction(_ sender: UIButton) {
+        NetWorkServỉce.share.login(phone: phoneTF.text!, pass: passTF.text!){ success in
+            if success {
+                self.goToHome()
+                print()
+            }
+            else{
+                self.passError.text = "sai số điẹn thoại hoặc mật khẩu"
+            }
         }
-
-    @IBAction func passwordChanged(_ sender: Any) {
         
     }
+    private  func goToHome(){
+        let controller = storyboard!.instantiateViewController(withIdentifier: "home") as! HomeController
+        present(controller, animated: true,completion: nil)
+    }
+    @IBAction func unWindFromMealDetailController(segue: UIStoryboardSegue){
+        //print("Back from meal detail controller")
+        //ket noi man hinh nguoi voi ham unwind
     
-    func invalidPassword(_ value: String)->String?
-    {
-           return nil
+        //get source controller tu man hinh 2
+        if let sourceController = segue.source as? RegisterController {
+        //get the new meal from meal detail controller
+            if let users = sourceController.user { //mealName
+                //print(meal.name)
+                //add the new meal into data source
+                    userList += [users]
+           
+                
+                    }
+                }
     }
-   
-    @IBAction func loginAction(_ sender: Any) {
-        resetForm()
-    }
+    
 }
