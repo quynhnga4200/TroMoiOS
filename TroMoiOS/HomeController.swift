@@ -8,21 +8,22 @@
 import Foundation
 import UIKit
 
-class HomeController: UIViewController , UITableViewDelegate , UITableViewDataSource {
+class HomeController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var rooms = [Room]()
     var HomeCellarray = [HomeTableViewCell]()
     //var image = UIImageView(named:"Logo")
     @IBOutlet weak var tableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return userData.count
+         return 2
     }
-        
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! Home
-        return cell
-    }
+    let aa = ["dáddad","0","9"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        tableView.delegate = self
         var request = URLRequest(url: URL(string: "http://127.0.0.1/APIMobile/?type=1")!)
         request.httpMethod = "GET"
         let session = URLSession.shared
@@ -36,6 +37,7 @@ class HomeController: UIViewController , UITableViewDelegate , UITableViewDataSo
                     print(json[1]["tienIch"]!)
                     for item in json {
                         print(item)
+                        
                     }
                 } catch {
                     print("error")
@@ -50,32 +52,17 @@ class HomeController: UIViewController , UITableViewDelegate , UITableViewDataSo
         tableView.dataSource = self
         tableView.allowsSelection = false
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rooms.count
+   
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+        
+        
+        cell.addressLB.text = aa[indexPath.row]
+        
+        
+        return cell
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "newRoom") as? HomeTableViewCell{
-            let room = rooms[indexPath.row]
-            cell.motelIMG.image = room.Roomimage[indexPath.row]
-            cell.addressLB.text = room.Roomaddress
-            cell.areaLB.text = room.Roomacreage
-            cell.priceLB.text = room.Roomprice
-            return cell
-            
-        }
-        else{
-            fatalError("Can not create the cell")
-        }
-      
-        
-    }
     @IBAction func unWindFromCreatePostController (segue: UIStoryboardSegue){
         print("Hello")
         if let sourceController = segue.identifier as? CreatePostController{

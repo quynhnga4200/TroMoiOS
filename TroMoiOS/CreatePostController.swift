@@ -10,7 +10,8 @@ import PhotosUI
 
 
 class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate, PHPickerViewControllerDelegate {
-
+    var room: Room?
+    var check: Bool = false
     var PostType: Int = 0
     var RoomType: Int = 0
     var ImageArray: [UIImage] = []
@@ -42,20 +43,15 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
     @IBAction func stackclick(_ sender: UITapGestureRecognizer) {
         stackviewClicked(viewstack: WifiStackView,position: 0)
     }
-    
     @IBAction func WCClick(_ sender: UITapGestureRecognizer) {
         stackviewClicked(viewstack: WcStackView,position: 1)
     }
-    
     @IBAction func PakingClick(_ sender: UITapGestureRecognizer) {
         stackviewClicked(viewstack: PackingStackView,position: 2)
     }
-    
     @IBAction func FreeClick(_ sender: UITapGestureRecognizer) {
         stackviewClicked(viewstack: FreeStackView,position: 3)
-        
     }
-    
     @IBAction func KitchenClick(_ sender: UITapGestureRecognizer) {
         stackviewClicked(viewstack: KitchenStackView,position: 4)
     }
@@ -78,22 +74,14 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
             viewstack.layer.backgroundColor = .none
             uilityaray[position] = false
         }
-        
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let borderdes = UIColor.black
         DescriptionTextfield.layer.borderColor = borderdes.cgColor
         DescriptionTextfield.layer.borderWidth = 1.0
-
-        
-    
         // Do any additional setup after loading the view.
     }
-    
-
-    
     //MARK: Thay đổi giá trị của loại tin
     @IBAction func onTapSegment(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -169,12 +157,10 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
         PriceTextfield.layer.borderColor = UIColor.blue.cgColor;
         PriceTextfield.layer.borderWidth = 1.0
     }
-    @IBAction func Confirmbutton(_ sender: UIButton) {
+    
+    func CheckTextFields()-> Bool{
         let bordercolor = UIColor.red
-        var check: Bool = false
-
         if PriceTextfield.text == ""{
-            check = true
             PriceTextfield.layer.borderColor = bordercolor.cgColor
             PriceTextfield.layer.borderWidth = 1.0
         }
@@ -182,7 +168,6 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
             PriceTextfield.layer.borderColor = nil
         }
         if AcreageTextfield.text == ""{
-            check = true
             AcreageTextfield.layer.borderColor = bordercolor.cgColor
             AcreageTextfield.layer.borderWidth = 1.0
         }
@@ -190,47 +175,59 @@ class CreatePostController: UIViewController,UITextFieldDelegate,UIImagePickerCo
             AcreageTextfield.layer.borderColor = UIColor.blue.cgColor
         }
         if TitleTextfield.text == ""{
-            check = true
             TitleTextfield.layer.borderColor = bordercolor.cgColor
             TitleTextfield.layer.borderWidth = 1.0
         }
         if OwnerTextfield.text == ""{
-            check = true
             OwnerTextfield.layer.borderColor = bordercolor.cgColor
             OwnerTextfield.layer.borderWidth = 1.0
         }
         if PhoneTextfield.text == ""{
-            check = true
             PhoneTextfield.layer.borderColor = bordercolor.cgColor
             PhoneTextfield.layer.borderWidth = 1.0
         }
         if DescriptionTextfield.text == ""{
-            check = true
             DescriptionTextfield.layer.borderColor = bordercolor.cgColor
             DescriptionTextfield.layer.borderWidth = 1.0
         }
         if AdressCity.text == ""{
-            check = true
             AdressCity.layer.borderColor = bordercolor.cgColor
             AdressCity.layer.borderWidth = 1.0
         }
         if AdressDictrict.text == ""{
-            check = true
             AdressDictrict.layer.borderColor = bordercolor.cgColor
             AdressDictrict.layer.borderWidth = 1.0
         }
         if AdressWard.text == ""{
-            check = true
             AdressWard.layer.borderColor = bordercolor.cgColor
             AdressWard.layer.borderWidth = 1.0
         }
         if AdressStreet.text == ""{
-            check = true
             AdressStreet.layer.borderColor = bordercolor.cgColor
             AdressStreet.layer.borderWidth = 1.0
         }
-        if check  {
-            return
+        else{
+            check = true
+        }
+        return check
+    }
+    
+    
+    @IBAction func Confirmbutton(_ sender: UIButton) {
+        if CheckTextFields() == true{
+            print("chuyển màn hình ok")
+        }
+        else{
+            print("Không chuyển màn hình")
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier{
+            if identifier == "newRoom"{
+                if let destinationController = segue.destination as? HomeController{
+                    print("Nga Nga")
+                }
+            }
         }
     }
 }

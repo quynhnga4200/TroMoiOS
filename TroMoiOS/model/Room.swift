@@ -10,16 +10,17 @@ import UIKit
 class Room {
     //MARK: Properties
     var Roomid: Int = 0
+    var Roomprice:String = ""
     var Roomtitle: String = ""
     var Roomowner: String = ""
     var Roomaddress: String = ""
     var Roomownerphone: String = ""
-    var Roomacreage: Int = 0
+    var Roomacreage: String = ""
     var RoomDescription: String = ""
-    var Roomimage: [UIImage]?
-    var Roomutility:[UIImage]?
+    var Roomimage: [UIImage]
+    var Roomutility:[Bool]
 
-    init(id: Int, title: String, owner: String, address: String, ownerphone: String, acreage: Int, description: String,image: [UIImage]?, untility: [UIImage]?) {
+    init(id: Int, title: String, owner: String, address: String, ownerphone: String, acreage: String, description: String,image: [UIImage], untility: [Bool], price: String) {
         self.Roomid = id
         self.Roomtitle = title
         self.Roomowner = owner
@@ -29,6 +30,7 @@ class Room {
         self.RoomDescription = description
         self.Roomimage = image
         self.Roomutility = untility
+        self.Roomprice = price
     }
 }
     

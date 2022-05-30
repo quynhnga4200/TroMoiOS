@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="59U-gt-in8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tYX-iT-5vc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -1103,6 +1103,7 @@
                                                         <buttonConfiguration key="configuration" style="filled" title="Xac nhan"/>
                                                         <connections>
                                                             <action selector="Confirmbutton:" destination="tYX-iT-5vc" eventType="touchUpInside" id="eVm-oO-e7m"/>
+                                                            <segue destination="59U-gt-in8" kind="presentation" identifier="newRoom" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="9Cx-ew-amB"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1333,7 +1334,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeTableView" rowHeight="113" id="EnP-ag-QeJ" customClass="HomeTableViewCell" customModule="TroMoiOS">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EnP-ag-QeJ" id="ORA-Jc-wh5">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EnP-ag-QeJ" id="ORA-Jc-wh5" customClass="HomeTableViewCell" customModule="TroMoiOS" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -1395,6 +1396,7 @@
                                                 <constraint firstItem="3c5-uW-ksF" firstAttribute="centerY" secondItem="ORA-Jc-wh5" secondAttribute="centerY" id="zQv-35-sCc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="HomeTableViewCell"/>
                                         <connections>
                                             <outlet property="addressLB" destination="ebG-Nh-b06" id="HBj-tA-t7V"/>
                                             <outlet property="areaIMG" destination="gmK-HQ-0Zg" id="BZa-VI-wK5"/>
@@ -1435,7 +1437,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vba-Br-YMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1807.2463768115942" y="56.919642857142854"/>
+            <point key="canvasLocation" x="2710" y="846"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="iAA-ER-tGX">

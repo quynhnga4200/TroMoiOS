@@ -24,11 +24,6 @@ class HomeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func set_data(addresslb: String , arealb: String , pricelb: String) {
-        self.addressLB!.text = "addresslb"
-        self.areaLB.text = "arealb"
-        self.priceLB.text = "pricelb"
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
