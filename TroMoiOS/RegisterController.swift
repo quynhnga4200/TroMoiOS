@@ -24,46 +24,14 @@ class RegisterController: UIViewController {
     @IBOutlet weak var passError: UILabel!
     @IBOutlet weak var repassError: UILabel!
     @IBOutlet weak var registerButton: UIButton!
-   
-    var user : User?
+   public var ListUser : Array<User> = Array()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       
+
     }
-   
-            
-    @IBAction func tapButton(_ sender: Any) {
-        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                    //print("Chuyen man hinh")
-                    
-                    if let btnSender = sender as? UIButton{
-                        if btnSender === registerButton {
-                            print("btnGOToMap is Tap")
-                        }
-                    }
-                    if let btnSender = sender as? UIBarButtonItem{
-                        if btnSender === registerButton {
-                            //print("btnSave is Tap")
-                            
-                            //create the new meal lay du lieu
-                            //neu mealName rong thi se ko chet chuong trinh(a = b ?? c)
-                            let userName = fullNameTF.text ?? ""
-                            let UserMail =  emailTF.text ?? ""
-                            let UserPhone = phoneTF.text ?? ""
-                            let UserPass = passTF.text ?? ""
-                            let UserRepass = passTF.text ?? ""
-                            let avatar = ""
-                            
-                            user = User(name: userName, email: UserMail, phone: UserPhone, pass: UserPass, repass: UserRepass, avatar: avatar)
-                           
-                        }
-                    }
-                }
-        goToLogin()
-    }
-    //Khi nao nhan save thi chuyen ve man hinh list, con gotomap
-   
     
     func resetForm(){
         registerButton.isEnabled = false
@@ -78,9 +46,21 @@ class RegisterController: UIViewController {
         repassTF.text = ""
     }
    
+    @IBAction func registerAction(_ sender: Any) {
      
-    
-        func nameChanged(_ sender: Any) {
+//        if User.user?.phonenumber == phoneTF.text{
+//            registerError.text = "Register Faild"
+//
+//        }
+//        else{
+         
+            ListUser.append(User.init(name: fullNameTF.text!, email: emailTF.text!, phone: phoneTF.text!, pass: passTF.text!, repass: repassTF.text!, avatar: ""))
+                    self.goToLogin()
+                print(ListUser)
+        
+//        }
+    }
+    @IBAction func nameChanged(_ sender: Any) {
         if(fullNameTF.text == ""){
             fullNameError.text = "Vui lòng không để trống"
             fullNameError.isHidden = false
@@ -90,7 +70,7 @@ class RegisterController: UIViewController {
         }
     
     }
-        func emailChaged(_ sender: Any) {
+    @IBAction func emailChaged(_ sender: Any) {
         if let email = emailTF.text
         {
             if let messageError = invalidEmail(email){
@@ -115,7 +95,7 @@ class RegisterController: UIViewController {
            return nil
     }
     
-        func phoneChanged(_ sender: Any) {
+    @IBAction func phoneChanged(_ sender: Any) {
         if let phoneNumber = phoneTF.text
         {
             if let messageError = invalidPhoneNumber(phoneNumber){
@@ -143,7 +123,7 @@ class RegisterController: UIViewController {
        return nil
     }
     
-        func passChanged(_ sender: Any) {
+    @IBAction func passChanged(_ sender: Any) {
         if let password = passTF.text
         {
             if let messageError = invalidPassword(password)
@@ -192,7 +172,7 @@ class RegisterController: UIViewController {
     }
     
     
-        func repassChanged(_ sender: Any) {
+    @IBAction func repassChanged(_ sender: Any) {
         if (repassTF.text != passTF.text)
         {
             repassError.text = "mật khẩu không giống "
@@ -210,12 +190,11 @@ class RegisterController: UIViewController {
             registerButton.isEnabled = true
         }
     }
-    func goToLogin(){
+    private  func goToLogin(){
         let controller = storyboard!.instantiateViewController(withIdentifier: "login") as! LoginController
         present(controller, animated: true,completion: nil)
     }
     
 
 }
-
 
