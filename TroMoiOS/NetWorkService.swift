@@ -8,7 +8,7 @@
 import Foundation
 class   NetWorkServỉce{
     
-   static let share = NetWorkServỉce()
+    static let share = NetWorkServỉce()
     private init(){}
     
     private var user : User?
