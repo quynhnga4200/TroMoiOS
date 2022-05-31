@@ -1,4 +1,4 @@
-//
+
 //  HomeController.swift
 //  TroMoiOS
 //
@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+
 
 class HomeController: UIViewController {
     
@@ -23,28 +24,51 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         // dang ki nhan dang tai su dung o
         
-        let roomImg = UIImage(named: "Logo")
+        // lay du lieu api
+        var request = URLRequest(url: URL(string: "http://192.168.56.1/iOS_tromoi/?action=getAllRoom")!)
+        request.httpMethod = "GET"
+        let session = URLSession.shared
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        if let room = Room(motelImg: roomImg, address: "31/21 Duong 12 Linh chiu thu duc", acreage: 18,price: 5){
-            rooms += [room]
+        let task = session.dataTask(with: request, completionHandler: { [self] data, response, error -> Void in
+            //print(response!)
+            DispatchQueue.main.async {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data!) as! [Dictionary<String, AnyObject>]
+                    for item in json {
+                        var imageView : UIImage!
+                        let url = URL(string:item["image"] as! String);
+                        if let data = try? Data(contentsOf: url!){
+                            imageView = UIImage(data:data);
+                        }
+                        
+                        if let room = Room(id: Int(item["id"] as! String) ?? 0,motelImg: imageView, address: item["DiaChi"] as! String, acreage: Int(item["dientich"] as! String) ?? 0,price: Int(item["giaphong"] as! String) ?? 0){
+                            rooms += [room]
+                            
+                        }
+                    }
+                    self.tableView.reloadData()
+                } catch {
+                    print("error")
+                }
+            }
             
-        }
-        if let room = Room(motelImg: roomImg, address: "31/23 Duong 56 Binhh thanh", acreage: 18,price: 5){
-            rooms += [room]
             
-        }
-        if let room = Room(motelImg: roomImg, address: "31/21 Duong 12 Linh chiu thu duc", acreage: 18,price: 5){
-            rooms += [room]
-            
-        }
-        if let room = Room(motelImg: roomImg, address: "31/21 Duong 12 Linh chiu thu duc", acreage: 18,price: 5){
-            rooms += [room]
-            
-        }
-        if let room = Room(motelImg: roomImg, address: "31/21 Duong 12 Linh chiu thu duc", acreage: 18,price: 5){
-            rooms += [room]
-            
-        }
+        })
+        
+        task.resume()
+        
+        
+        
+        //du lieu ao
+//        for _ in 0...10 {
+//            if let room = Room(motelImg: roomImg, address: "31/21 Duong 12 Linh chiu thu duc", acreage: 18,price: 5){
+//                rooms += [room]
+//
+//            }
+//        }
+        
+        
         //searchMotel = addressData
         tableView.delegate = self
         tableView.dataSource = self
@@ -62,14 +86,26 @@ class HomeController: UIViewController {
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.placeholder = "Tìm theo địa chỉ"
-        
-        
-        
+
     }
 }
-
+extension UIImageView {
+    func loadFrom(URLAddress: String) {
+        guard let url = URL(string: URLAddress) else {
+            return
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                        self?.image = loadedImage
+                }
+            }
+        }
+    }
+}
 extension HomeController: UITableViewDelegate , UITableViewDataSource , UISearchResultsUpdating , UISearchBarDelegate {
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
@@ -84,10 +120,17 @@ extension HomeController: UITableViewDelegate , UITableViewDataSource , UISearch
     }
     
     //return addressData.count
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let id = rooms[indexPath.row].Roomid
+        DataPassing.shared.id = id
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DescriptionScreen") // MySecondSecreen the storyboard ID
+        self.present(vc, animated: true, completion: nil)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableView" , for: indexPath) as? HomeTableViewCell{
-            
+            			
             //lay duong dan trong mang
             let room = rooms[indexPath.row]
             
@@ -126,9 +169,9 @@ extension HomeController: UITableViewDelegate , UITableViewDataSource , UISearch
             
             for word in rooms {
                 if word.Roomaddress.uppercased().contains(searchText.uppercased()){
-                        searchMotel.append(word)
-                       }
-                   }
+                    searchMotel.append(word)
+                }
+            }
         }
         else{
             seaching =  false

@@ -32,11 +32,12 @@ class Room {
         //self.Roomutility = untility
     //}
     
-    init?( motelImg: UIImage?, address: String,acreage: Int , price : Int  ) {
+    init?( id:Int,motelImg: UIImage?, address: String,acreage: Int , price : Int  ) {
     self.Roomaddress = address
     self.Roomimg = motelImg
     self.Roomacreage = acreage
     self.RoomPrice = price
+    self.Roomid = id
     }
 }
     
